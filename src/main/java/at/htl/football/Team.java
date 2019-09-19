@@ -41,7 +41,6 @@ public class Team implements Comparable{
                 points++;
             }
         }
-
     }
 
     // region Getter

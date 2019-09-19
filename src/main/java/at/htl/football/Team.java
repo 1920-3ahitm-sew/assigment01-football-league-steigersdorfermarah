@@ -31,14 +31,24 @@ public class Team implements Comparable{
         if (match.getGuestName().equals(this.name)) {
             if (match.getGuestGoals() > match.getHomeGoals()){
                 points += 3;
+                wins++;
+                goalsShot += match.getGuestGoals();
             }else if (match.getGuestGoals() == match.getHomeGoals()){
                 points++;
+                draws++;
+            }else if (match.getHomeGoals() > match.getGuestGoals()){
+                defeats++;
             }
         }else if(match.getHomeName().equals(this.name)){
             if (match.getGuestGoals() < match.getHomeGoals()){
                 points += 3;
+                wins += 1;
+                goalsShot += match.getHomeGoals();
             }else if (match.getGuestGoals() == match.getHomeGoals()){
                 points++;
+                draws++;
+            }else if (match.getHomeGoals() < match.getGuestGoals()){
+            defeats++;
             }
         }
     }
@@ -76,7 +86,7 @@ public class Team implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        Team otherTeam = new Team();
-        return this.points - otherTeam.points;
+        Team otherTeam = (Team) o;
+        return ((Team) o).points - this.points;
     }
 }

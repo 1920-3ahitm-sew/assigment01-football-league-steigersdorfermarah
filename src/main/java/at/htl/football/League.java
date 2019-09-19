@@ -25,6 +25,7 @@ public class League {
             if (teams.get(i).getName().compareTo(team) == 0) {
                 return teams.get(i);
             }
+
         }
 
         Team team1 = new Team(team);
@@ -38,8 +39,7 @@ public class League {
         String.format("Team             Pts     W       D       L       GF      GA      GD");
         System.out.println("");
         for (int i = 0; i < teams.size(); i++) {
-            System.out.println(teams.get(i).getName() + " " + teams.get(i).getPoints() + " " + teams.get(i).getDraws()+ " " + teams.get(i).getDefeats() + " " + teams.get(i).getGoalsShot()+ " " + teams.get(i).getGoalsReceived());
-            System.out.println();
+            System.out.printf(teams.get(i).getName() + "               " + teams.get(i).getPoints() + "   " + teams.get(i).getDraws()+ " " + teams.get(i).getDefeats() + " " + teams.get(i).getGoalsShot()+ " " + teams.get(i).getGoalsReceived() + "%n");
         }
 
         return null;

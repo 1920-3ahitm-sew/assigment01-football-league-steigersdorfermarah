@@ -98,6 +98,6 @@ public class Team implements Comparable{
     @Override
     public int compareTo(Object o) {
         Team otherTeam = (Team) o;
-        return ((Team) o).points - this.points;
+        return otherTeam.points - this.points;
     }
 }

@@ -33,22 +33,33 @@ public class Team implements Comparable{
                 points += 3;
                 wins++;
                 goalsShot += match.getGuestGoals();
+                goalsReceived += match.getHomeGoals();
             }else if (match.getGuestGoals() == match.getHomeGoals()){
                 points++;
                 draws++;
+                goalsShot += match.getGuestGoals();
+                goalsReceived += match.getHomeGoals();
             }else if (match.getHomeGoals() > match.getGuestGoals()){
                 defeats++;
+                goalsShot += match.getGuestGoals();
+                goalsReceived += match.getHomeGoals();
             }
         }else if(match.getHomeName().equals(this.name)){
             if (match.getGuestGoals() < match.getHomeGoals()){
                 points += 3;
                 wins += 1;
                 goalsShot += match.getHomeGoals();
+                goalsReceived += match.getGuestGoals();
+
             }else if (match.getGuestGoals() == match.getHomeGoals()){
                 points++;
                 draws++;
+                goalsShot += match.getHomeGoals();
+                goalsReceived += match.getGuestGoals();
             }else if (match.getHomeGoals() < match.getGuestGoals()){
-            defeats++;
+                defeats++;
+                goalsShot += match.getHomeGoals();
+                goalsReceived += match.getGuestGoals();
             }
         }
     }

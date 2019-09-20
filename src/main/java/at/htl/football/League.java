@@ -40,9 +40,10 @@ public class League {
 
         for (int i = 0; i < teams.size(); i++) {
 
-            System.out.printf(teams.get(i).getName() + " \t\t\t   " + teams.get(i).getPoints() + "\t" + teams.get(i).getDraws()+ "\t" + teams.get(i).getDefeats() + "\t" + teams.get(i).getGoalsShot()+ "\t" + teams.get(i).getGoalsReceived()  + "%n");
-        }
+            //System.out.printf(teams.get(i).getName() + " \t\t\t   " + teams.get(i).getPoints() + "\t" +teams.get(i).getWins()+ "\t" + teams.get(i).getDraws()+ "\t" + teams.get(i).getDefeats() + "\t" + teams.get(i).getGoalsShot()+ "\t" + teams.get(i).getGoalsReceived()  + "\n");
+            System.out.printf("%s          %2d %2d %2d %2d %2d %2d %2d \n",teams.get(i).getName(), teams.get(i).getPoints(), teams.get(i).getWins(), teams.get(i).getDraws(), teams.get(i).getDefeats(), teams.get(i).getGoalsShot(), teams.get(i).getGoalsReceived(),(teams.get(i).getGoalsShot() - teams.get(i).getGoalsReceived()));
 
+        }
         return null;
     }
 }
